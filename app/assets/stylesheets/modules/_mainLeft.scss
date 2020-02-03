@@ -1,0 +1,67 @@
+.leftBox{
+  background-color: rgb(227, 227, 227);
+  height: calc(100vh - 50px);
+  width: calc(100vw - 50vw);
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  
+  .perfecture{
+    background-image: url('image/japanMap.png');
+    background-size: cover;
+    height: 40vw;
+    width: 80%;
+    position: relative;
+    
+    .hokkaido{
+      position: absolute;
+      right: 20%;
+      top: 15%;
+    }
+    .tohoku{
+      position: absolute;
+      right: 30%;
+      top: 40%;
+    }
+    .kanto{
+      position: absolute;
+      right: 35%;
+      bottom: 35%;
+    }
+    .chubu{
+      position: absolute;
+      right: 45%;
+      bottom: 32%;
+
+    }
+    .kinki{
+      position: absolute;
+      left: 35%;
+      bottom: 23%;
+
+    }
+    .chugoku{
+      position: absolute;
+      left: 20%;
+      bottom: 26%;
+
+    }
+    .shikoku{
+      position: absolute;
+      left: 23%;
+      bottom: 18%;
+    }
+    .kyushu{
+      position: absolute;
+      left: 8%;
+      bottom: 12%;
+
+    }
+    .okinawa{
+      position: absolute;
+      right: 22%;
+      bottom: 12%;
+    }
+
+  }
+}

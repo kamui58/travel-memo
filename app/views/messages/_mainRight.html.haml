@@ -1,0 +1,9 @@
+.rightBox
+  .formBox
+    %form.formBox__form
+      %textarea{placeholder: "140字以内", class: "formBox__form__text"}
+      -# .formBox__form__comand
+      %label{class: "formBox__form__image"}
+        %i.fas.fa-image
+        %input{type: "file", class: "formBox__form__image--icon"}
+      %input{type: "submit",value: "投稿する", class: "formBox__form__btn"}
