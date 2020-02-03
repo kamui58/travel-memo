@@ -1,8 +1,8 @@
 .rightBox
   .formBox
-    %form.formBox__form
-      %textarea{placeholder: "どんな感じだった？", class: "formBox__form__text"}
-      %label{class: "formBox__form__image"}
+    = form_with(model: @message, local: true, class: "formBox_form") do |f|
+      = f.text_area :text, placeholder: "どんな感じだった？", class: "formBox__form__text"
+      = f.label :image, class: "formBox__form__image" do
         %i.fas.fa-image
-        %input{type: "file", class: "formBox__form__image--icon"}
-      %input{type: "submit",value: "投稿する", class: "formBox__form__btn"}
+        = f.file_field :image, class: "formBox__form__image--icon"
+      = f.submit "投稿する", class: "formBox__form__btn"

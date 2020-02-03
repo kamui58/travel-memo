@@ -7,5 +7,22 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %p.notice
+      = notice
+    %p.alert
+      = alert
   %body
+    -# .header
+    -#   .siteName
+    -#     %a(href="/messages#index")
+    -#       travel（仮）
+    -#   .userBox
+    -#     - if user_signed_in?
+    -#       .userNickname
+    -#         = current_user.nickname
+    -#       %ul.userFormBtn
+    -#         %li
+    -#           = link_to "マイページ", "/users/#{current_user.id}"
+    -#           = link_to "ログアウト", destroy_user_session_path, method: :delete
+
     = yield
