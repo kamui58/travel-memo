@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   #   sessions:      'users/sessions',
   # }
   root to: "messages#index"
-  resources :users, only: [:index, :edit, :update]
-  resources :messages, only: [:index]
+  resources :users, only: [:show]
+  resources :messages, only: [:index, :create]
 
 end
