@@ -16,11 +16,16 @@
     .messageBox{
       background-color: rgb(255, 184, 184);
       width: 90%;
-      &__image{
-        
-      }
-      &__message{
+      margin: 0 auto;
 
+      &__image{
+        margin: 10px auto;
+        display: flex;
+        justify-content: center;
+      }
+      &__text{
+        font-size: 12px;
+        margin-bottom: 10px;
       }
     }
   }
