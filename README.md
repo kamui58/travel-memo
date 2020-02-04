@@ -81,3 +81,4 @@ Things you may want to cover:
 ### Association
 - belongs_to :message
 - belongs_to :prefecture
+

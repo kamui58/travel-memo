@@ -1,12 +1,14 @@
-.header
-  .siteName
-    %a(href="/messages#index")
-      travel（仮）
-  .userBox
-    - if user_signed_in?
-      .userNickname
-        = current_user.nickname
-      %ul.userFormBtn
-        %li
-          = link_to "マイページ", "/users/#{current_user.id}"
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
+= render "./messages/header"
+.userContentsBox
+  .userBoxLeft
+  .userBoxCenter
+    .messageBox
+      - @messages.each do |message|
+        - if message.image?
+          .messageBox__image
+            = image_tag message.image.url
+        .messageBox__text
+          = message.text
+
+  .userBoxRight
+

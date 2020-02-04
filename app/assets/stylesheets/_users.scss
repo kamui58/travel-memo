@@ -1,0 +1,31 @@
+.userContentsBox{
+  background-color:#b0f4f968;
+  height: 100vh;
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 50px;
+  display: flex;
+  
+  .userBoxLeft{
+    background-color: rgb(255, 150, 150);
+    width: 20%;
+  }
+  .userBoxCenter{
+    background-color: rgb(202, 255, 199);
+    width: 65%;
+    .messageBox{
+      background-color: rgb(255, 184, 184);
+      width: 90%;
+      &__image{
+        
+      }
+      &__message{
+
+      }
+    }
+  }
+  .userBoxRight{
+    background-color: rgb(178, 255, 252);
+    width: 15%;
+  }
+}
