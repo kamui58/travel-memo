@@ -2,13 +2,14 @@
 .userContentsBox
   .userBoxLeft
   .userBoxCenter
-    .messageBox
-      - @messages.each do |message|
+    - @messages.each do |message|
+      .messageBox
         - if message.image?
           .messageBox__image
-            = image_tag message.image.url
+            = image_tag message.image.url, class: "messageBox__image--pic"
         .messageBox__text
-          = message.text
+          %span
+            = simple_format(message.text)
 
   .userBoxRight
 
