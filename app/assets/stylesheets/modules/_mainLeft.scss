@@ -6,58 +6,58 @@
   display: flex;
   justify-content: center;
   
-  .perfecture{
+  .prefecture{
     background-image: url('image/japanMap.png');
     background-size: cover;
     height: 40vw;
     width: 80%;
     position: relative;
     
-    .hokkaido{
+    .hokkaidos{
       position: absolute;
       right: 20%;
       top: 15%;
     }
-    .tohoku{
+    .tohokus{
       position: absolute;
       right: 30%;
       top: 40%;
     }
-    .kanto{
+    .kantos{
       position: absolute;
       right: 35%;
       bottom: 35%;
     }
-    .chubu{
+    .chubus{
       position: absolute;
       right: 45%;
       bottom: 32%;
 
     }
-    .kinki{
+    .kinkis{
       position: absolute;
       left: 35%;
       bottom: 23%;
 
     }
-    .chugoku{
+    .chugokus{
       position: absolute;
       left: 20%;
       bottom: 26%;
 
     }
-    .shikoku{
+    .shikokus{
       position: absolute;
       left: 23%;
       bottom: 18%;
     }
-    .kyushu{
+    .kyushus{
       position: absolute;
       left: 8%;
       bottom: 12%;
 
     }
-    .okinawa{
+    .okinawas{
       position: absolute;
       right: 22%;
       bottom: 12%;
