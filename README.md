@@ -45,8 +45,8 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- has_many :message_perfectures
-- has_many :prefectures, through: :message_perfectures
+- has_many :message_prefectures
+- has_many :prefectures, through: :message_prefectures
 
 
 ## prefecturesテーブル
@@ -71,7 +71,7 @@ Things you may want to cover:
 - belongs_to :prefecture
 
 
-## message_perfecturesテーブル
+## message_prefecturesテーブル
 
 |Column|Type|Options|
 |------|----|-------|

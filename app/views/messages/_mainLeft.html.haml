@@ -1,29 +1,20 @@
 .leftBox
-  .perfecture
-    .hokkaido
-      %a(href="#")
-        北海道
-    .tohoku
-      %a(href="#")
-        東北
-    .kanto
-      %a(href="#")
-        関東
-    .chubu
-      %a(href="#")
-        中部
-    .kinki
-      %a(href="#")
-        近畿
-    .chugoku
-      %a(href="#")
-        中国
-    .shikoku
-      %a(href="#")
-        四国
-    .kyushu
-      %a(href="#")
-        九州
-    .okinawa
-      %a(href="#")
-        沖縄
+  .prefecture
+    .hokkaidos
+      = link_to "北海道", prefectures_hokkaidos_path
+    .tohokus
+      = link_to "東北", prefectures_tohokus_path
+    .kantos
+      = link_to "関東", prefectures_kantos_path
+    .chubus
+      = link_to "中部", prefectures_chubus_index_path
+    .kinkis
+      = link_to "近畿", prefectures_kinkis_path
+    .chugokus
+      = link_to "中国", prefectures_chugokus_path
+    .shikokus
+      = link_to "四国", prefectures_shikokus_path
+    .kyushus
+      = link_to "九州", prefectures_kyushus_path
+    .okinawas
+      = link_to "沖縄", prefectures_okinawas_path
