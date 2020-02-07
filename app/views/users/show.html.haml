@@ -4,12 +4,12 @@
   .userBoxCenter
     - @messages.each do |message|
       .messageBox
-        - if message.image?
-          .messageBox__image
-            = image_tag message.image.url, class: "messageBox__image--pic"
         .messageBox__text
           %span
             = simple_format(message.text)
+          - if message.image?
+            .messageBox__image
+              = image_tag message.image.url, class: "messageBox__image--pic"
 
   .userBoxRight
 
