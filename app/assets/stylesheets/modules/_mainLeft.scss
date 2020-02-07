@@ -1,5 +1,4 @@
 .leftBox{
-  background-color: rgb(227, 227, 227);
   height: calc(100vh - 50px);
   width: calc(100vw - 50vw);
   margin-top: 50px;
@@ -7,15 +6,18 @@
   justify-content: center;
   
   .prefecture{
+    background-color: rgb(151, 236, 255);
     background-image: url('image/japanMap.png');
     background-size: cover;
+    border: 1px black;
     height: 40vw;
     width: 80%;
     position: relative;
+    font-size: calc(50vw / 26);
     
     .hokkaidos{
       position: absolute;
-      right: 20%;
+      right: 19%;
       top: 15%;
     }
     .tohokus{
@@ -30,20 +32,20 @@
     }
     .chubus{
       position: absolute;
-      right: 45%;
+      right: 46%;
       bottom: 32%;
 
     }
     .kinkis{
       position: absolute;
-      left: 35%;
-      bottom: 23%;
+      left: 34%;
+      bottom: 24%;
 
     }
     .chugokus{
       position: absolute;
-      left: 20%;
-      bottom: 26%;
+      left: 19%;
+      bottom: 25%;
 
     }
     .shikokus{
