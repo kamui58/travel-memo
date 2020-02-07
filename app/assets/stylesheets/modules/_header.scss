@@ -1,4 +1,4 @@
-.header{
+.header {
   background-color: $headerGreen;
   height: 50px;
   width: 100vw;
@@ -8,25 +8,38 @@
   position: fixed;
   z-index: 1;
 
-  .siteName{
+  .siteName {
     background-color: red;
     margin: 10vw;
   }
 
-  .userBox{
+  .userBox {
     display: flex;
     align-items: center;
     padding-right: 10vw;
 
-    .userNickname{
+    .userNickname {
       padding-right: 10px;
     }
     .userForBtn{
 
     }
   }
+  .drag-and-drop {
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+    cursor: move;
+    position: absolute;
+    z-index: 1000;
+  }
+  .drag {
+    z-index: 1001;
+  }
+
 }
 
-.mainBox{
+.mainBox {
   display: flex;
 }
+
