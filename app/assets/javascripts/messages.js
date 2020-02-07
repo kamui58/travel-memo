@@ -21,12 +21,13 @@ $(function(){
     x = event.pageX - this.offsetLeft;
     y = event.pageY - this.offsetTop;
 
-    document.body.addEventListener("touchmove", mmove, false);
+    document.body.addEventListener("mousemove", mmove, false);
     document.body.addEventListener("touchmove", mmove, false);
   }
+
   function mmove(e) {
     var drag = document.getElementsByClassName("drag")[0];
-    
+
     if(e.type === "mousemove"){
       var event = e;
     } else {
@@ -46,6 +47,7 @@ $(function(){
 
   function mup(e){
     var drag = document.getElementsByClassName("drag")[0];
+    
     document.body.removeEventListener("mousemove", mmove, false);
     drag.removeEventListener("mouseup", mup, false);
     document.body.removeEventListener("touchmove", mmove, false);
