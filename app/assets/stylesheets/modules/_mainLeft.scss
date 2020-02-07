@@ -1,69 +1,96 @@
 .leftBox{
   height: calc(100vh - 50px);
   width: calc(100vw - 50vw);
-  margin-top: 50px;
+  margin-top: 70px;
   display: flex;
   justify-content: center;
+
+  .leftContents{
   
-  .prefecture{
-    background-color: rgb(151, 236, 255);
-    background-image: url('image/japanMap.png');
-    background-size: cover;
-    border: 1px black;
-    height: 40vw;
-    width: 80%;
-    position: relative;
-    font-size: calc(50vw / 26);
-    
-    .hokkaidos{
-      position: absolute;
-      right: 19%;
-      top: 15%;
-    }
-    .tohokus{
-      position: absolute;
-      right: 30%;
-      top: 40%;
-    }
-    .kantos{
-      position: absolute;
-      right: 35%;
-      bottom: 35%;
-    }
-    .chubus{
-      position: absolute;
-      right: 46%;
-      bottom: 32%;
+    .prefecturesBox{
+      background-color: rgb(151, 236, 255);
+      height: 40vw;
+      width: 40vw;
+      box-shadow: 2px 2px 2px 2px rgb(27, 78, 53);
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    }
-    .kinkis{
-      position: absolute;
-      left: 34%;
-      bottom: 24%;
+      .prefectures{
+        background-color: rgb(151, 236, 255);
+        background-image: url('image/japanMap.png');
+        background-size: cover;
+        height: 35vw;
+        width: 35vw;
+        position: relative;
+        font-size: calc(50vw / 32);
+        
+        .hokkaidos{
+          position: absolute;
+          right: 20%;
+          top: 15%;
+        }
+        .tohokus{
+          position: absolute;
+          right: 30%;
+          top: 40%;
+        }
+        .kantos{
+          position: absolute;
+          right: 35%;
+          bottom: 35%;
+        }
+        .chubus{
+          position: absolute;
+          right: 46%;
+          bottom: 32%;
 
-    }
-    .chugokus{
-      position: absolute;
-      left: 19%;
-      bottom: 25%;
+        }
+        .kinkis{
+          position: absolute;
+          left: 34%;
+          bottom: 24%;
 
-    }
-    .shikokus{
-      position: absolute;
-      left: 23%;
-      bottom: 18%;
-    }
-    .kyushus{
-      position: absolute;
-      left: 8%;
-      bottom: 12%;
+        }
+        .chugokus{
+          position: absolute;
+          left: 19%;
+          bottom: 25%;
 
-    }
-    .okinawas{
-      position: absolute;
-      right: 22%;
-      bottom: 12%;
-    }
+        }
+        .shikokus{
+          position: absolute;
+          left: 23%;
+          bottom: 18%;
+        }
+        .kyushus{
+          position: absolute;
+          left: 8%;
+          bottom: 14%;
 
+        }
+        .okinawas{
+          position: absolute;
+          right: 22%;
+          bottom: 13%;
+        }
+      }
+    }
+    &__form{
+      background-color: rgb(255, 255, 255);
+      height: 30px;
+      line-height: 30px;
+      float: right;
+      margin-top: 10px;
+      box-shadow: 3px 3px 3px 3px rgba($color: #5a5a5a, $alpha: 1.0);
+
+      &__box{
+        padding: 0 10px;
+        .text{
+        }
+        .btn{
+        }
+      }
+    }
   }
 }
