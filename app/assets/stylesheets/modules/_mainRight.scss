@@ -6,9 +6,12 @@
 
   .formBox{
     background-color: rgb(227, 227, 227);
-    width: 80%;
+    width: 40vw;
     margin: 0 auto;
+    padding: 5px;
     box-shadow: 3px 3px 3px 3px rgba($color: #5a5a5a, $alpha: 1.0);
+    position: absolute;
+    z-index: 1000;
 
     &__form{
       width: 100%;
@@ -34,5 +37,9 @@
         cursor: pointer;
       }
     }
+
+  }
+  .drag {
+    z-index: 1001;
   }
 }
