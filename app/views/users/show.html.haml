@@ -4,12 +4,17 @@
   .userBoxCenter
     - @messages.each do |message|
       .messageBox
-        .messageBox__text
-          %span
-            = simple_format(message.text)
+        .messageBox__user
+          .messageBox__user__icon
+        .messageBox__contents
+          .messageBox__contents__userNickname
+            = current_user.nickname
           - if message.image?
-            .messageBox__image
-              = image_tag message.image.url, class: "messageBox__image--pic"
+            .messageBox__contents__image
+              = image_tag message.image.url, class: "messageBox__contents__image--pic"
+          .messageBox__contents__text
+            %span
+              = simple_format(message.text)
 
   .userBoxRight
 
