@@ -1,35 +1,63 @@
 .userContentsBox{
-  background-color:#b0f4f968;
   height: 100vh;
-  width: 75%;
-  margin: 0 auto;
   padding-top: 50px;
   display: flex;
+  justify-content: center;
   
   .userBoxLeft{
     background-color: rgb(255, 150, 150);
-    width: 20%;
+    width: 300px;
   }
   .userBoxCenter{
-    background-color: rgb(202, 255, 199);
-    width: 65%;
-    .messageBox{
-      width: 90%;
-      margin: 0 auto;
+    width: 700px;
 
-      &__image{
-        margin: 10px auto;
-        display: flex;
-        justify-content: center;
+
+    .messageBox{
+      width: 98%;
+      margin: 5px auto;
+      padding: 10px;
+      border: solid 1px black;
+      border-radius: 15px 15px;
+      display: flex;
+
+      &__user{
+        height: auto;
+        min-height: 100%;
+
+        &__icon{
+          height: 50px;
+          width: 50px;
+          border-radius: 50px 50px;
+          background-color: rgb(227, 227, 227);
+          background-image: url('image/user.png');
+          background-size: cover;
+        }
       }
-      &__text{
+
+      &__contents{
+        width: 100%;
+        margin-left: 10px;
         font-size: 16px;
-        margin-bottom: 10px;
+
+        &__userNickname{
+          margin-bottom: 5px;
+        }
+
+        &__image{
+          margin: 10px auto;
+          display: flex;
+          justify-content: center;
+        }
+        &__text{
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
       }
+
     }
   }
   .userBoxRight{
     background-color: rgb(178, 255, 252);
-    width: 15%;
+    width: 200px;
   }
 }
