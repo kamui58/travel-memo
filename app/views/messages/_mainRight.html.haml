@@ -1,9 +1,6 @@
 .rightBox
   .formBox
     = form_with(model: @message, local: true, class: "formBox_form") do |f|
-      -# - ["北海道","東北","関東","中部","近畿","中国","四国","九州","沖縄"].each do |prefecture|
-      -#   = f.label prefecture 
-      -#   = f.check_box (:complete)
 
       = f.text_area :text, placeholder: "感想フォーム", class: "formBox__form__text"
       = f.label :image, class: "formBox__form__image" do

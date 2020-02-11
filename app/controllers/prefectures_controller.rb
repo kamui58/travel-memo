@@ -1,4 +1,6 @@
 class PrefecturesController < ApplicationController
+  layout 'prefecture'
+
   def index
     
   end
@@ -8,11 +10,11 @@ class PrefecturesController < ApplicationController
   end
 
   def tohoku
-    
+
   end
 
   def kanto
-    
+    layout 'prefecture'
   end
 
   def chubu

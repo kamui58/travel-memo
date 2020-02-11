@@ -1,5 +1,4 @@
 $(function(){
-  // var elements = document.getElementsByClassName("drag-and-drop");
   var elements = document.getElementsByClassName("formBox");
 
 
@@ -24,8 +23,6 @@ $(function(){
     x = event.pageX - this.offsetLeft;
     y = event.pageY - this.offsetTop;
 
-    // ここに"mousedown"から"mouseleave"離した時の処理を入れたい
-    // ここにif文を入れて、"mouseup"した場合の処理を入れればいいのでは？
     document.body.addEventListener("mousemove", mmove, false);
     // document.body.addEventListener("touchmove", mmove, false);
   }
