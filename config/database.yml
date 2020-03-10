@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: travel-memo_production
-  username: travel-memo
-  password: <%= ENV['TRAVEL-MEMO_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
