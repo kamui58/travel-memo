@@ -7,7 +7,7 @@ $(function(){
 
   for(var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("mousedown", mdown, false);
-    // elements[i].addEventListener("touchstart", mdown, false);
+    elements[i].addEventListener("touchstart", mdown, false);
   }
 
   function mdown(e){
@@ -24,7 +24,7 @@ $(function(){
     y = event.pageY - this.offsetTop;
 
     document.body.addEventListener("mousemove", mmove, false);
-    // document.body.addEventListener("touchmove", mmove, false);
+    document.body.addEventListener("touchmove", mmove, false);
   }
 
   function mmove(e) {
@@ -44,8 +44,8 @@ $(function(){
 
     drag.addEventListener("mouseup", mup, false);
     document.body.addEventListener("mouseleave", mup, false);
-    // drag.addEventListener("touchend", mup, false);
-    // document.body.addEventListener("touchleave", mup, false);
+    drag.addEventListener("touchend", mup, false);
+    document.body.addEventListener("touchleave", mup, false);
   }
 
   function mup(e){
@@ -54,8 +54,8 @@ $(function(){
 
     document.body.removeEventListener("mousemove", mmove, false);
     drag.removeEventListener("mouseup", mup, false)
-    // document.body.removeEventListener("touchmove", mmove, false);
-    // drag.removeEventListener("touchend", mup, false);
+    document.body.removeEventListener("touchmove", mmove, false);
+    drag.removeEventListener("touchend", mup, false);
 
     drag.classList.remove("drag");
   }
