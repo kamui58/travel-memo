@@ -9,7 +9,7 @@
   z-index: 1;
 
   .siteName {
-    margin: 10vw;
+    margin: 0 10vw;
     font-size: 28px;
   }
 
@@ -20,9 +20,6 @@
 
     .userNickname {
       padding-right: 10px;
-    }
-    .userForBtn{
-
     }
   }
   .drag-and-drop {
@@ -37,6 +34,14 @@
     z-index: 1001;
   }
 
+}
+
+.headerSecret{
+  height: 50px;
+}
+
+.notice {
+  position: relative;
 }
 
 .mainBox {
