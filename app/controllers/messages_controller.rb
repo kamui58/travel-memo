@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
   def destroy
     message = Message.find(params[:id])
     message.destroy
-    redirect_to user_path
+    redirect_to "/users/#{message.user_id}"
   end
 
   def edit
