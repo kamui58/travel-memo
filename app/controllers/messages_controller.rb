@@ -14,6 +14,23 @@ class MessagesController < ApplicationController
     redirect_to messages_path, notice: "投稿しました"
   end
 
+  def destroy
+    message = Message.find(params[:id])
+    message.destroy
+    redirect_to user_path
+  end
+
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def show
+
+  end
 
   private
 
