@@ -1,15 +1,20 @@
 .userContentsBox{
   height: 100vh;
-  padding-top: 50px;
   display: flex;
   justify-content: center;
+
   
   .userBoxLeft{
     background-color: rgb(176, 255, 210);
-    width: 300px;
+    width: 25vw;
+    max-width: 300px;
+    height: 100vh;
+    position: fixed;
+    right: 75vw;
   }
   .userBoxCenter{
-    width: 700px;
+    width: 100%;
+    margin: 0 20vw 0 25vw;
 
 
     .messageBox{
@@ -66,6 +71,10 @@
   }
   .userBoxRight{
     background-color: rgb(176, 255, 210);
-    width: 200px;
+    width: 20vw;
+    max-width: 200px;
+    height: 100vh;
+    position: fixed;
+    left: 80vw;
   }
 }
