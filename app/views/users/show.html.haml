@@ -7,8 +7,21 @@
         .messageBox__user
           = image_tag("user.png", class: "messageBox__user__icon")
         .messageBox__contents
-          .messageBox__contents__userNickname
-            = current_user.nickname
+          .messageBox__contents__topBox
+            .messageBox__contents__topBox__userNickname
+              = current_user.nickname
+            %button.messageBox__contents__topBox__commandSelect.pulldownSelect
+              - if user_signed_in?
+                %ul.messageFormBtn
+                  %li
+                    = link_to("削除", message_path(message.id), method: :delete)
+                    = link_to("編集", "")
+              - else
+                %ul.messageFormBtn
+                  %li
+                    = link_to("まだ未定", "")
+
+              
           - if message.image?
             .messageBox__contents__image
               = image_tag message.image.url, class: "messageBox__contents__image--pic"
