@@ -10,16 +10,17 @@
           .messageBox__contents__topBox
             .messageBox__contents__topBox__userNickname
               = current_user.nickname
-            %button.messageBox__contents__topBox__commandSelect.pulldownSelect
+            .messageBox__contents__topBox__commandSelect.pulldownSelect
+              = image_tag("pulldown.png", class: "messageBox__contents__topBox__commandSelect")
               - if user_signed_in?
                 %ul.messageFormBtn
-                  %li
-                    = link_to("削除", message_path(message.id), method: :delete)
-                    = link_to("編集", "")
+                  %li.messageFormBtn__list
+                    = link_to("削　除", message_path(message.id), method: :delete, class: "listContent")
+                    = link_to("編　集", "", class: "listContent")
               - else
                 %ul.messageFormBtn
                   %li
-                    = link_to("まだ未定", "")
+                    = link_to("未定", "")
 
               
           - if message.image?
