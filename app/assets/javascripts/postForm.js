@@ -11,7 +11,6 @@ $(function(){
   }
 
   function mdown(e){
-    console.log("押した")
     this.classList.add("drag");
 
     if(e.type === "mousedown"){
@@ -28,7 +27,6 @@ $(function(){
   }
 
   function mmove(e) {
-    console.log("動かした")
     var drag = document.getElementsByClassName("drag")[0];
 
     if(e.type === "mousemove"){
@@ -49,7 +47,6 @@ $(function(){
   }
 
   function mup(e){
-    console.log("置いた")
     var drag = document.getElementsByClassName("drag")[0];
 
     document.body.removeEventListener("mousemove", mmove, false);
