@@ -2,6 +2,9 @@
 # capistranoのバージョンを記載。固定のバージョンを利用し続け、バージョン変更によるトラブルを防止する
 lock '3.12.1'
 
+# deploy.rbにmaster.keyを読み込ませるためのコード
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
+
 # Capistranoのログの表示に利用する
 set :application, 'travel-memo'
 
