@@ -1,5 +1,4 @@
 = render "./messages/header"
-= render "./prefectures/prefecture"
 .hokkaido
   - @messages.each do |message|
-    = render "./modules/messageAllBox", message: message
+    = render "./modules/messageBox", message: message
