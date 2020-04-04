@@ -1,44 +1,43 @@
 class PrefecturesController < ApplicationController
-  layout 'prefecture'
 
-  def index
+  # def hokkaido
+  #   @messages = Message.all
+  # end
+
+  # def tohoku
+
+  # end
+
+  # def kanto
+
+  # end
+
+  # def chubu
     
-  end
+  # end
 
-  def hokkaido
+  # def kinki
     
-  end
+  # end
 
-  def tohoku
-
-  end
-
-  def kanto
-    layout 'prefecture'
-  end
-
-  def chubu
+  # def chugoku
     
-  end
+  # end
 
-  def kinki
+  # def shikoku
     
-  end
+  # end
 
-  def chugoku
+  # def kyushu
     
-  end
+  # end
 
-  def shikoku
+  # def okinawa
     
-  end
-
-  def kyushu
-    
-  end
-
-  def okinawa
-    
-  end
+  # end
   
+  private
+  def set_messageBox
+    @messages = Message.all
+  end
 end
