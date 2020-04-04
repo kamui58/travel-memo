@@ -1,0 +1,26 @@
+.messageBox
+  .messageBox__user
+    = image_tag("user.png", class: "messageBox__user__icon")
+  .messageBox__contents
+    .messageBox__contents__topBox
+      .messageBox__contents__topBox__userNickname
+        = current_user.nickname
+      .messageBox__contents__topBox__commandSelect.pulldownSelect
+        = image_tag("pulldown.png", class: "messageBox__contents__topBox__commandSelect")
+        - if user_signed_in?
+          %ul.messageFormBtn
+            %li.messageFormBtn__list
+              = link_to("削　除", message_path(message.id), method: :delete, class: "listContent")
+              = link_to("編　集", "", class: "listContent")
+        - else
+          %ul.messageFormBtn
+            %li
+              = link_to("未定", "")
+
+        
+    - if message.image?
+      .messageBox__contents__image
+        = image_tag message.image_url, class: "messageBox__contents__image--pic"
+    .messageBox__contents__text
+      %span
+        = simple_format(message.text)

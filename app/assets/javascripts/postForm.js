@@ -24,6 +24,8 @@ $(function(){
 
     document.body.addEventListener("mousemove", mmove, false);
     document.body.addEventListener("touchmove", mmove, false);
+    document.body.addEventListener("mouseup", mup, false);
+    document.body.addEventListener("touchend", mup, false);
   }
 
   function mmove(e) {
@@ -40,9 +42,7 @@ $(function(){
     drag.style.top = event.pageY - y + "px";
     drag.style.left = event.pageX - x + "px";
 
-    drag.addEventListener("mouseup", mup, false);
     document.body.addEventListener("mouseleave", mup, false);
-    drag.addEventListener("touchend", mup, false);
     document.body.addEventListener("touchleave", mup, false);
   }
 
@@ -50,7 +50,7 @@ $(function(){
     var drag = document.getElementsByClassName("drag")[0];
 
     document.body.removeEventListener("mousemove", mmove, false);
-    drag.removeEventListener("mouseup", mup, false)
+    drag.removeEventListener("mouseup", mup, false);
     document.body.removeEventListener("touchmove", mmove, false);
     drag.removeEventListener("touchend", mup, false);
 
