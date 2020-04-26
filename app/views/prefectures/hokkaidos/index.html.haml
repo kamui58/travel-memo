@@ -1,4 +1,4 @@
-= render "./messages/header"
+= render "./posts/header"
 .hokkaido
-  - @messages.each do |message|
-    = render "./modules/messageBox", message: message
+  - @posts.each do |post|
+    = render "./modules/postBox", post: post

@@ -1,9 +1,9 @@
-= render "./messages/header"
+= render "./posts/header"
 .userContentsBox
   .userBoxLeft
   .userBoxCenter
-    - @messages.each do |message|
-      = render "./modules/messageBox", message: message
+    - @posts.each do |post|
+      = render "./modules/postBox", post: post
 
 
   .userBoxRight

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "messages#index"
+  root to: "posts#index"
 
   namespace :prefectures do
     resources :hokkaidos, only: :index
@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show]
-  resources :messages, only: [:index, :create, :destroy, :edit, :update, :show]
-
+  resources :posts, only: [:index, :create, :destroy, :edit, :update, :show]
 
 end

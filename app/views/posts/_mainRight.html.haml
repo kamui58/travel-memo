@@ -1,8 +1,9 @@
 .rightBox
   .formBox
-    = form_with(model: @message, local: true, class: "formBox_form") do |f|
+    = form_with(model: @post, local: true, class: "formBox_form") do |f|
 
-      = f.text_area :text, placeholder: "感想フォーム", class: "formBox__form__text"
+
+      = f.text_area :message, placeholder: "感想フォーム", class: "formBox__form__text"
       = f.label :image, class: "formBox__form__image" do
         %i.fas.fa-image
         = f.file_field :image, class: "formBox__form__image--icon"
