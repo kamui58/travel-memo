@@ -1,7 +1,7 @@
 class PrefecturesController < ApplicationController
 
   # def hokkaido
-  #   @messages = Message.all
+  #   @posts = Post.all
   # end
 
   # def tohoku
@@ -37,7 +37,7 @@ class PrefecturesController < ApplicationController
   # end
   
   private
-  def set_messageBox
-    @messages = Message.all
+  def set_postBox
+    @posts = Post.all
   end
 end
