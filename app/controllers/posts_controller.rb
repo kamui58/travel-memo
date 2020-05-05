@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    redirect_to "users/#{post.user_id}"
+    redirect_to "/users/#{post.user_id}"
   end
 
   def edit
