@@ -47,18 +47,14 @@ $(function(){
   }
 
   function mup(e){
-    // var drag = document.getElementsByClassName("drag")[0];
+    var drag = document.getElementsByClassName("drag")[0];
 
     document.body.removeEventListener("mousemove", mmove, false);
-    // console.log("1")
-    // drag.removeEventListener("mouseup", mup, false);
-    // console.log("2")
+    drag.removeEventListener("mouseup", mup, false);
     document.body.removeEventListener("touchmove", mmove, false);
-    // console.log("3")
-    // drag.removeEventListener("touchend", mup, false);
-    // console.log("4")
+    drag.removeEventListener("touchend", mup, false);
 
-    // drag.classList.remove("drag");
+    drag.classList.remove("drag");
   }
 
 });
