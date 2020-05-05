@@ -12,11 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2020_04_24_024848) do
 
+  create_table "municipalities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "prefecture_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prefecture_id"], name: "index_municipalities_on_prefecture_id"
+  end
+
   create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "address"
-    t.string "prefecture"
-    t.string "municipality"
+    t.bigint "prefecture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,12 +37,19 @@ ActiveRecord::Schema.define(version: 2020_04_24_024848) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "message"
-    t.text "image"
     t.bigint "user_id", null: false
+    t.text "image"
     t.bigint "place_id"
+    t.bigint "perfecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -60,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_024848) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "municipalities", "prefectures"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "posts", "users"
 end
