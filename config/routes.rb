@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show]
-  resources :posts, only: [:index, :create, :destroy, :edit, :update, :show]
+  resources :posts, only: [:index, :create, :destroy, :edit, :update, :show] do
+    collection do
+      get 'posts/index'
+    end
+  end
 
 end
