@@ -5,6 +5,7 @@
 
 # 現在実装できている機能一覧
 - 画像を含めた投稿機能
+- 投稿を北海道のリンクから閲覧する機能
 
 # 開発環境
 - Haml
@@ -58,7 +59,6 @@
 |password|string|null: false|
 |introduction|text|
 |image|text|
-|phone|integer|
 
 ### Association
 - has_many :posts
@@ -163,8 +163,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|
-|post_id|integer|
+|user_id|bigint|
+|post_id|bigint|
 
 ### Association
 - belongs_to :user
@@ -174,13 +174,15 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|post|text|
-|user_id|bigint|null: false, foreign_key: true|
-|place_id|bigint|null: false, foreign_key: true|
+|message|text|
+|user_id|references|null: false, foreign_key: true|
+|place_id|bigint|
+|prefecture_id|bigint|
 
 ### Association
 - belongs_to :user
 - belongs_to :place
+- belongs_to :prefecture
 - has_many :comments
 - has_many :likes
 - has_many :images
@@ -192,7 +194,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|text|
-|post_id|bigint|null: false, foreign_key: true|
+|post_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :post
@@ -211,8 +213,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|post_id|bigint|null: false, foreign_key: true|
-|tag_id|bigint|null: false, foreign_key: true|
+|post_id|references|null: false, foreign_key: true|
+|tag_id|bigint|null: false|
 
 ### Association
 - belongs_to :post
@@ -223,7 +225,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|
-|prefecture_id|bigint|null: false, foreign_key: true|
+|prefecture_id|bigint|
 
 ### Association
 - belongs_to :prefecture
@@ -237,6 +239,7 @@
 |name|string|null: false|
 
 ### Association
+- has_many :posts
 - has_many :places
 - has_many :municipalities
 
@@ -245,7 +248,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|
-|prefecture_id|bigint|null: false, foreign_key: true|
+|prefecture_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :prefecture

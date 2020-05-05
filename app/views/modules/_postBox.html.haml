@@ -1,0 +1,26 @@
+.postBox
+  .postBox__user
+    = image_tag("user.png", class: "postBox__user__icon")
+  .postBox__contents
+    .postBox__contents__topBox
+      .postBox__contents__topBox__userNickname
+        = post.user.nickname
+      .postBox__contents__topBox__commandSelect.pulldownSelect
+        = image_tag("pulldown.png", class: "postBox__contents__topBox__commandSelect")
+        - if user_signed_in? && current_user.id == post.user_id
+          %ul.postFormBtn
+            %li.postFormBtn__list
+              = link_to("削　除", post_path(post.id), method: :delete, class: "listContent")
+              = link_to("編　集", "", class: "listContent")
+        - else
+          %ul.postFormBtn
+            %li.postFormBtn__list
+              = link_to("詳　細", "", class: "listContent")
+
+        
+    - if post.image?
+      .postBox__contents__image
+        = image_tag post.image_url, class: "postBox__contents__image--pic"
+    .postBox__contents__text
+      %span
+        = simple_format(post.message)
