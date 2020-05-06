@@ -11,8 +11,13 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_path, notice: "投稿しました"
+    if user_signed_in?
+      @post = Post.create(post_params)
+      redirect_to posts_path, notice: "投稿しました"
+    else
+      flash.now[:alert] = "ログインしてください"
+      render :index
+    end
   end
 
   def destroy
