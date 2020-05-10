@@ -1,14 +1,11 @@
 # Travel-memo
 
 # 概要
-- 場所、都道府県、市区町村を利用して投稿、検索ができるサイト
+- 都道府県市区町村のタグを使用して投稿、検索ができるサイト
 
 # 現在実装できている機能一覧
 - 画像を含めた投稿機能
-- 観光地、施設名などから住所、都道府県、市区町村を表示する機能
-- ワードから検索する機能
-- マイページ機能
-- 自分が投稿した内容を削除する機能
+- 投稿を北海道のリンクから閲覧する機能
 
 # 開発環境
 - Haml
@@ -35,14 +32,16 @@
 
 # 制作背景
 
-- 観光地、施設名、都道府県、市区町村から検索できるようにすることで、投稿した内容を検索しやすくし、市区町村の情報を簡単に取得できるようにしたい
+- 都道府県市区町村のタグをつけ、市区町村別に検索できるようにすることで、地名ごとに情報収集しやすいアプリケーションを作成したい
+- レコメンドシステムを使用して、価値観の合う人同士が繋がり、情報交換できるようなプラットフォームを提供したい
 
-- レコメンドシステムを利用して、ユーザーの好みに合わせた投稿を表示できるようにして、市区町村別の情報収集をしやすくしたい
+# 課題や今後実装した機能
 
-という思いから制作
+## 課題
+- APIを利用して、都道府県市区町村の情報を取得する
 
-# 今後実装したい機能
-- 都道府県、市区町村のリンクからそれに対応した投稿内容を見れるようにする
+## 今後実装したい機能
+- 投稿に都道府県市区町村のタグを付与する
 
 - 協調フィルタリングというレコメンドを利用して、ユーザーごとにおすすめを提供する
 
@@ -178,10 +177,12 @@
 |message|text|
 |user_id|references|null: false, foreign_key: true|
 |place_id|bigint|
+|prefecture_id|bigint|
 
 ### Association
 - belongs_to :user
 - belongs_to :place
+- belongs_to :prefecture
 - has_many :comments
 - has_many :likes
 - has_many :images
@@ -224,9 +225,30 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|
-|address|string|
-|prefecture|string|
-|municipality|string|
+|prefecture_id|bigint|
+
+### Association
+- belongs_to :prefecture
+- has_many :posts
+
+
+## prefecturesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
 
 ### Association
 - has_many :posts
+- has_many :places
+- has_many :municipalities
+
+## municipalitiesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|
+|prefecture_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :prefecture
