@@ -13,14 +13,14 @@ function codeAddress() {
       resultsAddress = results[0].formatted_address.replace(/日本、〒[/\d/]{3,}-[/\d/]{4,}/g, "");
       addressDis.innerHTML = resultsAddress;
 
-      resultsPref = results[0].address_components.forEach(function (value) {
+      results[0].address_components.forEach(function (value) {
         type = value.types[0]
         if (type == "administrative_area_level_1") {
           formElements.prefecture.value = value.long_name;
         }
       });
 
-      resultsMuni = results[0].address_components.forEach(function (value) {
+      results[0].address_components.forEach(function (value) {
         type = value.types[0]
         if (type == "locality") {
           formElements.municipality.value = value.long_name;
