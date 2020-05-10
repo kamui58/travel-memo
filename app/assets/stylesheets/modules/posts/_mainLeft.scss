@@ -17,7 +17,8 @@
       align-items: center;
 
       .prefectures{
-        background-color: rgb(151, 236, 255);        background-size: cover;
+        background-color: rgb(151, 236, 255);
+        background-size: cover;
         height: 35vw;
         width: 35vw;
         position: relative;
@@ -77,19 +78,17 @@
     .placeName{
       &__search{
         background-color: rgb(255, 255, 255);
-        height: 30px;
-        line-height: 30px;
+        width: 40vw;
         float: right;
         margin-top: 10px;
+        padding: 5px 10px;
         border: solid 1px rgb(180, 180, 180);
-        // box-shadow: 3px 3px 3px 3px rgba($color: #5a5a5a, $alpha: 1.0);
 
-        &__box{
-          padding: 0 10px;
-          .text{
-          }
-          .btn{
-          }
+        &__textbox{
+          width: 30vw;
+        }
+        &__btn{
+          float: right;
         }
       }
     }
@@ -104,12 +103,6 @@
 
         &__box{
           padding: 0 10px;
-          .text{
-
-          }
-          .btn{
-            
-          }
         }
       }
     }

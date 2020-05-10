@@ -1,0 +1,4 @@
+= render "./posts/header"
+.search
+  - @posts.each do |post|
+    = render "./modules/postBox", post: post
