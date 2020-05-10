@@ -2,8 +2,6 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    # @post.build_prefecture
-    @post.build_place
     # respond_to do |format|
     #   format.html
     #   format.js
@@ -23,7 +21,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    redirect_to "users/#{post.user_id}"
+    redirect_to "/users/#{post.user_id}"
   end
 
   def edit
@@ -38,9 +36,18 @@ class PostsController < ApplicationController
     
   end
 
+  def search
+    # binding.pry
+    if params[:keyword].present?
+      @posts = Post.joins(:place).where('name LIKE ? OR prefecture LIKE ? OR municipality LIKE ?', "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%")
+    else
+      @posts = Post.none
+    end
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:message, :image, place_attributes:[:name, :address, :prefecture, :municipality]).merge(user_id: current_user.id)
+    params.require(:post).permit(:message, :image).merge(user_id: current_user.id)
   end
 end
