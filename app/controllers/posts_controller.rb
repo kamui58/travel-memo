@@ -2,10 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    # respond_to do |format|
-    #   format.html
-    #   format.js
-    # end
+    @post.build_place
   end
   
   def create
@@ -37,7 +34,6 @@ class PostsController < ApplicationController
   end
 
   def search
-    # binding.pry
     if params[:keyword].present?
       @posts = Post.joins(:place).where('name LIKE ? OR prefecture LIKE ? OR municipality LIKE ?', "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%")
     else
@@ -48,6 +44,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :image).merge(user_id: current_user.id)
+    params.require(:post).permit(:message, :image, place_attributes:[:name, :address, :prefecture, :municipality]).merge(user_id: current_user.id)
   end
 end

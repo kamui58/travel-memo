@@ -17,7 +17,8 @@
       align-items: center;
 
       .prefectures{
-        background-color: rgb(151, 236, 255);        background-size: cover;
+        background-color: rgb(151, 236, 255);
+        background-size: cover;
         height: 35vw;
         width: 35vw;
         position: relative;
@@ -85,7 +86,6 @@
 
         &__textbox{
           width: 30vw;
-
         }
         &__btn{
           float: right;
@@ -102,9 +102,7 @@
         border: solid 1px rgb(180, 180, 180);
 
         &__box{
-          
           padding: 0 10px;
-
         }
       }
     }

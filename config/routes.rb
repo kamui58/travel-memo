@@ -14,10 +14,6 @@ Rails.application.routes.draw do
     resources :okinawas, only: :index
   end
 
-  # namespace :posts do
-  #   resources :searches
-  # end
-
   resources :users, only: [:show]
   resources :posts, only: [:index, :create, :destroy, :edit, :update, :show] do
     get :search, on: :collection

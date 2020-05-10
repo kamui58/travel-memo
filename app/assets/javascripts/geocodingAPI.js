@@ -1,6 +1,6 @@
-function initMap() {
+  function initMap() {
 
-}
+  }
 function codeAddress() {
   geocoder = new google.maps.Geocoder();
   inputAddress = document.getElementById('inputAddress').value;
@@ -31,4 +31,3 @@ function codeAddress() {
     }
   });
 }
-

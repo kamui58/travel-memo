@@ -50,7 +50,6 @@ $(function(){
 
     document.body.removeEventListener("mousemove", mmove, false);
     document.body.removeEventListener("touchmove", mmove, false);
-
   }
 
 });
