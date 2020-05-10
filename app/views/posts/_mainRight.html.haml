@@ -1,17 +1,7 @@
 .rightBox
   .formBox
-    = form_with(model: @post, local: true, class: "formBox__form", id: "postForm") do |f|
-      = f.fields_for :place do |place|
-        
-        = place.text_field :name, placeholder: "観光地、施設名などを入力", class: "formBox__form__place", id: "inputAddress"
-        .formBox__form__geobtn#btn{onclick: "codeAddress()"}
-          確認
-        .formBox__form__address#resultsAddress
-          上に入力後に確認を押してください
+    = form_with(model: @post, local: true, class: "formBox_form") do |f|
 
-
-        = place.text_field :prefecture, placeholder: "都道府県", class: "formBox__form__prefecture", id: "prefecture", value: ""
-        = place.text_field :municipality, placeholder: "市区町村",class: "formBox__form__municipality", id: "municipality", value: ""
 
       = f.text_area :message, placeholder: "感想フォーム", class: "formBox__form__text"
       = f.label :image, class: "formBox__form__image" do

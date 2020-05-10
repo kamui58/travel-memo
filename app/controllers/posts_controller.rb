@@ -11,19 +11,14 @@ class PostsController < ApplicationController
   end
   
   def create
-    if user_signed_in?
-      @post = Post.create(post_params)
-      redirect_to posts_path, notice: "投稿しました"
-    else
-      flash.now[:alert] = "ログインしてください"
-      render :index
-    end
+    @post = Post.create(post_params)
+    redirect_to posts_path, notice: "投稿しました"
   end
 
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    redirect_to "/users/#{post.user_id}"
+    redirect_to "users/#{post.user_id}"
   end
 
   def edit
@@ -36,15 +31,6 @@ class PostsController < ApplicationController
 
   def show
     
-  end
-
-  def search
-    # binding.pry
-    if params[:keyword].present?
-      @posts = Post.joins(:place).where('name LIKE ? OR prefecture LIKE ? OR municipality LIKE ?', "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%")
-    else
-      @posts = Post.none
-    end
   end
 
   private
