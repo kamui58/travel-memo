@@ -23,13 +23,6 @@
           = link_to "沖縄", prefectures_okinawas_path
 
     .placeName
-      %form.placeName__search
-        .placeName__search__box
-          %input{type: "text", placeholder: "場所を入力", class: "text"}
-          %input{type: "submit", value: "検索", class: "btn"}
-
-    .userNickname
-      %form.userNickname__search
-        .userNickname__search__box
-          %input{type: "text", placeholder: "ユーザー名を入力", class: "text"}
-          %input{type: "submit", value: "検索", class: "btn"}
+      = form_with(url: search_posts_path, method: :get, local: true, class: "placeName__search") do |f|
+        = f.text_field :keyword, class: "placeName__search__textbox", placeholder: "検索したいワードを入力"
+        = f.submit "検索", class: "placeName__search__btn"
