@@ -1,5 +1,6 @@
 class Prefectures::HokkaidosController < ApplicationController
   def index
-    @posts = Post.all
+    hokkaido = Post.joins(:place).merge(Place.hokkaido)
+    @posts = hokkaido
   end
 end
