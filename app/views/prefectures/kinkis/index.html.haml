@@ -1,1 +1,4 @@
 = render "./posts/header"
+.prefecture
+  - @posts.each do |post|
+    = render "./modules/postBox", post: post
