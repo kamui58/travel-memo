@@ -1,27 +1,3 @@
-.userContentsBox{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-
-  
-  .userBoxLeft{
-    background-color: rgb(176, 255, 210);
-    width: 25vw;
-    max-width: 300px;
-    height: 100vh;
-    position: fixed;
-    right: 75vw;
-  }
-  .userBoxCenter{
-    width: 100%;
-    margin: 0 20vw 0 25vw;
-  }
-  .userBoxRight{
-    background-color: rgb(176, 255, 210);
-    width: 20vw;
-    max-width: 200px;
-    height: 100vh;
-    position: fixed;
-    left: 80vw;
-  }
-}
+@import "modules/users/registration";
+@import "modules/users/session";
+@import "modules/users/show";
