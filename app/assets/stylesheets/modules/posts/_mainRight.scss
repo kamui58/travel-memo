@@ -1,8 +1,17 @@
 .rightBox{
-  // background-color: rgb(255, 255, 196);
   height: calc(100vh - 50px);
   width: 50vw;
-  padding-top: 100px;
+  padding-top: 20px;
+
+  .textarea{
+    background-color: #b1c7ff;
+    width: 40vw;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    border: solid 1px black;
+    
+  }
 
   .formBox{
     background-color: rgb(227, 227, 227);
@@ -19,7 +28,6 @@
       &__place{
         height: 20px;
         width: 65%;
-        // margin: 0 10%;
         margin-left: 10%;
         resize: none;
         border: solid 1px black;
@@ -40,11 +48,9 @@
 
       &__address{
         font-size: 12px;
-        // height: 20px;
         width: 80%;
         margin: 5px 10%;
         resize: none;
-        // border: solid 1px black;
       }
 
       &__prefecture{
@@ -59,7 +65,6 @@
         width: 35%;
         margin-right: 10%;
         float: right;
-        // margin: 5px 10%;
         border: solid 1px black;
       }
 
@@ -90,4 +95,14 @@
   .drag {
     z-index: 1001;
   }
+}
+
+.testText{
+  font-size: 12px;
+  margin: 5px 0 10px;
+}
+
+.fontsize{
+  font-size: 14px;
+  margin: 5px 0;
 }

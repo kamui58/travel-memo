@@ -1,4 +1,20 @@
 .rightBox
+  - unless user_signed_in?
+    .textarea
+      .description
+        %h2.title
+          テスト用アカウント
+        %div.testText
+          ログインする場合はこちらのアカウントをご利用ください
+        %ul.fontsize
+          メールアドレス
+        %li.fontsize
+          ・kurione@gmail.com
+        %ul.fontsize
+          パスワード
+        %li.fontsize
+          ・kurione
+
   .formBox
     = form_with(model: @post, local: true, class: "formBox__form", id: "postForm") do |f|
       = f.fields_for :place do |place|
