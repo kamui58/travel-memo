@@ -1,17 +1,29 @@
-%h2 ログイン
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :"メールアドレス"
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :"パスワード"
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :"ログイン状態を保存する"
-  .actions
-    = f.submit "ログイン"
-= render "devise/shared/links"
+.sessionBox
+  .title
+    ログイン
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .sessionBox__email
+      = f.label :"メールアドレス", class: "sessionBox__email__label"
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: "sessionBox__email__text"
+    .sessionBox__password
+      = f.label :"パスワード", class: "sessionBox__password__label"
+      %br/
+      = f.password_field :password, autocomplete: "current-passwod", placeholder: "6文字以上", class: "sessionBox__password__text"
+    .sessionBox__submit
+      = f.submit "ログイン", class: "sessionBox__submit__btn"
+
+.textarea
+  .description
+    %h2.title
+      テスト用アカウント
+    %div.testText
+      ログインする場合はこちらのアカウントをご利用ください
+    %ul.fontsize
+      メールアドレス
+    %li.fontsize
+      ・kurione@gmail.com
+    %ul.fontsize
+      パスワード
+    %li.fontsize
+      ・kurione
