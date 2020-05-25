@@ -11,16 +11,23 @@
           %ul.postFormBtn
             %li.postFormBtn__list
               = link_to("削　除", post_path(post.id), method: :delete, class: "listContent")
-              = link_to("編　集", "", class: "listContent")
+            -#   = link_to("編　集", "", class: "listContent")
         - else
           %ul.postFormBtn
-            %li.postFormBtn__list
-              = link_to("詳　細", "", class: "listContent")
+            -# %li.postFormBtn__list
+            -#   = link_to("詳　細", "", class: "listContent")
 
         
     - if post.image?
       .postBox__contents__image
         = image_tag post.image_url, class: "postBox__contents__image--pic"
-    .postBox__contents__text
+      .postBox__contents__tag
+        .postBox__contents__tag__place.tag
+          = "#" + post.place.name
+        .postBox__contents__tag__prefecture.tag
+          = "#" + post.place.prefecture
+        .postBox__contents__tag__municipality.tag
+          = "#" + post.place.municipality
+      .postBox__contents__text
       %span
         = simple_format(post.message)
