@@ -2,9 +2,6 @@
 .userContentsBox
   .userBoxLeft
   .userBoxCenter
-    - @posts.each do |post|
-      = render "./modules/postBox", post: post
-
-
+    = render "./modules/postBox", posts: @posts
   .userBoxRight
 
