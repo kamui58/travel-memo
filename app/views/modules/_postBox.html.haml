@@ -24,12 +24,12 @@
           .postBox__contents__image
             = image_tag post.image_url, class: "postBox__contents__image--pic"
           .postBox__contents__tag
-            .postBox__contents__tag__place.tag
-              = "#" + post.place.name
-            .postBox__contents__tag__prefecture.tag
-              = "#" + post.place.prefecture
-            .postBox__contents__tag__municipality.tag
-              = "#" + post.place.municipality
+            .postBox__contents__tag__place.postTag
+              = link_to("#" + post.place.name, "/posts/search?utf8=✓&keyword=#{post.place.name}&commit=検索")
+            .postBox__contents__tag__prefecture.postTag
+              = link_to("#" + post.place.prefecture, "/posts/search?utf8=✓&keyword=#{post.place.prefecture}&commit=検索")
+            .postBox__contents__tag__municipality.postTag
+              = link_to("#" + post.place.municipality, "/posts/search?utf8=✓&keyword=#{post.place.municipality}&commit=検索")
           .postBox__contents__text
           %span
             = simple_format(post.message)
